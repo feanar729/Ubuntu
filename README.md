@@ -2,9 +2,13 @@
 #### Ubuntu에 설치한 모든 경험 기록용
 ------------------------------------------------------------------
 # ubuntu 14.04
+> Ubuntu Install 경험 기록
+>>[Ubuntu install][install]
+[install]: https://github.com/feanar729/ubuntu/blob/master/ubuntu_14.04/install_14.04.md 
 > 환경설정 구축 경험 기록
->>[Ubuntu install & plug-in][install & plug-in]
-[install & plug-in]: https://github.com/feanar729/ubuntu/blob/master/ubuntu_14.04/install_14.04.md 
+>>[Ubuntu tools & plug-in][tools & plug-in]
+[tools & plug-in]: https://github.com/feanar729/ubuntu/blob/master/ubuntu_14.04/install_plug-in.md 
+
 
 # ubuntu 16.04
 > Plug-in install[작성 중..]

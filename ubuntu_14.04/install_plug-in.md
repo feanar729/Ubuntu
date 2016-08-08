@@ -35,57 +35,62 @@ $ vi ~/.vimrc
 ```                                 
 
 ```
-set number  " line 표시를 해줍니다.
-set shiftwidth=4    " shift를 4칸으로 ( >, >>, <, << 등의 명령어)
-set tabstop=4   " tab을 4칸으로
+set cindent " C 프로그래밍용 자동 들여쓰기
+set autoindent " 자동 들여쓰기
+set smartindent " 스마트한 들여쓰기
 set ignorecase  " 검색시 대소문자 구별하지않음
 set hlsearch    " 검색시 하이라이트(색상 강조)
 set expandtab   " tab 대신 띄어쓰기로
-set nocompatible    " 방향키로 이동가능
+
 set bs=indent,eol,start " backspace 키 사용 가능
 set history=1000    " 명령어에 대한 히스토리를 1000개까지
 set ruler   " 상태표시줄에 커서의 위치 표시
 set nobackup    " 백업파일을 만들지 않음
 set title       " 제목을 표시
+
 set showmatch   " 매칭되는 괄호를 보여줌
 set wmnu    " tab 자동완성시 가능한 목록을 보여줌
-
 set nocompatible " 오리지날 VI와 호환하지 않음
-set autoindent  " 자동 들여쓰기
-set cindent " C 프로그래밍용 자동 들여쓰기
-set smartindent " 스마트한 들여쓰기
 set wrap 
 set nowrapscan " 검색할 때 문서의 끝에서 처음으로 안돌아감
-set nobackup " 백업 파일을 안만듬
+
 set visualbell " 키를 잘못눌렀을 때 화면 프레시
 set ruler " 화면 우측 하단에 현재 커서의 위치(줄,칸) 표시
-set shiftwidth=4 " 자동 들여쓰기 4칸
-set number " 행번호 표시, set nu 도 가능
 set fencs=ucs-bom,utf-8,euc-kr.latin1 " 한글 파일은 euc-kr로, 유니코드는 유니코드로
 set fileencoding=utf-8 " 파일저장인코딩 
 set tenc=utf-8      " 터미널 인코딩
+
 set hlsearch " 검색어 강조, set hls 도 가능
 set lbr
-set incsearch "  키워드 입력시 점진적 검색
-filetype indent on "  파일 종류에 따른 구문강조
+set incsearch " 키워드 입력시 점진적 검색
 set background=dark " 하이라이팅 lihgt / dark
-set backspace=eol,start,indent "  줄의 끝, 시작, 들여쓰기에서 백스페이스시 이전줄로
-set history=1000 "  vi 편집기록 기억갯수 .viminfo에 기록
+set backspace=eol,start,indent " 줄의 끝, 시작, 들여쓰기에서 백스페이스시 이전줄로
+set history=1000 " vi 편집기록 기억갯수 .viminfo에 기록
+filetype indent on " 파일 종류에 따른 구문강조
 
-colorscheme default  "  vi 색상 테마 설정
+"colorscheme default  "  vi 색상 테마 설정
+colorscheme jellybeans " vi 색상 테마
+"colorscheme blue "vi 색상 blue
+"colorscheme desert "vi 색상
+"colorscheme elflord "vi 색상
+"colorscheme koehler "vi 색상
+"colorscheme morning "vi 색상
+"colorscheme peachpuff "vi 색상
+"colorscheme shine "vi 색상
+"colorscheme slate "vi 색상
+"colorscheme torte "vi 색상
 
-"colo blue "글자색 blue
-"colo default "글자색 기본값 
-"colo desert "글자색 
-"colo elflord "글자색 
-"colo koehler "글자색 
-"colo morning "글자색 
-"colo peachpuff "글자색 
-"colo shine "글자색 
-"colo slate "글자색 
-"colo torte "글자색 
+set autoindent  " 자동 들여쓰기
+set number " 행번호 표시, set nu 도 가능
+set shiftwidth=4 " 자동 들여쓰기 4칸
+set tabstop=4 " 탭을 4칸으로
 
 syntax on   " 문법 하이라이트 킴"
+```
+
+- vim 컬러 스키마(jellybeans) 설치
+```
+$ curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim > ~/.vim/colors/jellybeans.vim
 ```
 ==================================================================================================
 
@@ -201,16 +206,119 @@ $ sudo pip uninstall powerline
 
 
 ## vundle + nurdtree
+- 우선 설치전 git을 install 해야 한다.
+
+#### Vundle 설치
+1. Set up Vundle
+~/.vim/bundle/ 폴더 안에 소스를 복사하여 넣어주면 작업이 완료된다.
+```
+user$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
+```
+2. Configure Plugins
+```
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+Plugin 'user/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 ```
 
+#### NERDTree 설치
+1. Search Plugins
+'Vundle' 설치후 vi플러그인에 들어가 명령행 모드에 다음과 같이 실행한다.
 ```
+:PluginSearch NERD
+```
+2. Add Plugin to ~/.vimrc
+'.vimrc'에 다음과 같은 명령어로 추가한다.
+```
+user$ echo "Plugin 'The-NERD-Tree'" >> ~/.vimrc  
+```
+3. Install Plugin
+'vim'을 실행후 명령행 모드에서 ':PluginInstall'이라고 실행하면 된다.
+
+○ 참고자료:<br/>
+https://dobest.io/install-vundle-and-nerdtree/ 
+[개인적으로 이런 멋진 plug-in을 알려주신 갓수찬님께 감사를...]
 ==================================================================================================
 
 
 ## pyenv + virtualenv + autoenv
+- 각각의 plugin은 Python 개발 효율성을 증대해주는 유용한 도구들이다 발췌한 요약 기능을 쓰자면
+
+'pyenv' : "Simple Python Version Management", 로컬에 다양한 파이썬 버전을 설치하고 사용할 수 있도록 한다.<br/> pyenv를 사용함으로써 파이썬 버전에 대한 의존성을 해결할 수 있다.<br/>
+'virtualenv' : “Virtual Python Environment builder”, 로컬에 다양한 파이썬 환경을 구축하고 사용할 수 있도록 한다.<br/> 일반적으로 Python Packages라고 부르는 ( pip install을 통해서 설치하는 ) 패키지들에 대한 의존성을 해결할 수 있다.<br/>
+'autoenv' : 만약 pyenv와 virtualenv를 통해서 의존성을 해결한다고 하더라도 작업할때마다 설정해주는 것은 귀찮은 작업이다.<br/> 특정 프로젝트 폴더로 들어가면 자동으로 개발 환경을 설정해주는 autoenv라는 스크립트를 활용하자.<br/>
+
+#### pyenv 설치
+- Install:
+```
+$ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+```
+- Update:
+```
+$ pyenv update
+```
+- Uninstall: 
+```
+$ rm -fr ~/.pyenv
+```
+그리고 '.zshrc'(zsh이 설치되었다면) 혹은 '.bashrc'에 아래 내용을 삭제한다.
+```
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+#### virtualenv 설치
 ```
 
 ```
+
+#### autoenv 설치
+```
+
+```
+
+○ 참고자료:<br/>
+https://github.com/yyuu/pyenv
+https://github.com/yyuu/pyenv-virtualenv
+https://github.com/kennethreitz/autoenv
+https://dobest.io/how-to-set-python-dev-env/
 ==================================================================================================
 
                                         
@@ -220,6 +328,8 @@ $ sudo add-apt repository
 $ sudo apt-get update
 $ sudo apt-get install google-chrome-stable
 ```
+○ 참고자료:<br/>
+
 ==================================================================================================
 
 
@@ -227,6 +337,8 @@ $ sudo apt-get install google-chrome-stable
 ```
 
 ```
+○ 참고자료:<br/>
+
 ==================================================================================================
                                                    
                                                 
@@ -234,12 +346,15 @@ $ sudo apt-get install google-chrome-stable
 ```
 
 ```
+○ 참고자료:<br/>
+
 ==================================================================================================
 
                                                        
 ##  slack
 slack homepage에서 다운후 설치<br/>
-- 다운로드: https://slack.com/downloads
+
+○ 다운로드: https://slack.com/downloads
 ==================================================================================================
 
 
@@ -251,6 +366,8 @@ slack homepage에서 다운후 설치<br/>
 $ sudo apt-get install gnome-session-flashback                                                        
 $ sudo apt-get install docky
 ```
+○ 참고자료:<br/>
+
 ==================================================================================================
 
 
@@ -271,3 +388,5 @@ $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 $ sudo apt-get update
 $ sudo apt-get install bomi
 ```
+○ 참고자료:<br/>
+
