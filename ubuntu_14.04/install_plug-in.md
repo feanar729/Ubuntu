@@ -8,8 +8,8 @@
 
 ## git
 ```
-$ sudo apt-get update
-$ sudo apt-get install git
+sudo apt-get update
+sudo apt-get install git
 ```
 
 --------------------------------------------------------------------------------------------------
@@ -18,8 +18,8 @@ $ sudo apt-get install git
 ## terminator
 개인적으로 사용하고 있는 터미널 tool이다 맥의 iterm과 비슷한 기능을 가지고 있어 사용하는데 유용하다.
 ```
-$ sudo apt-get update
-$ sudo apt-get install terminator
+sudo apt-get update
+sudo apt-get install terminator
 ```
 
 --------------------------------------------------------------------------------------------------
@@ -27,13 +27,13 @@ $ sudo apt-get install terminator
 
 ## vim
 ```
-$ sudo apt-get update
-$ sudo apt-get install vim
+sudo apt-get update
+sudo apt-get install vim
 ```                         
   
 아래처럼 .vimrc 파일을 생성한후 다음과 같이 설정했다.
 ```
-$ vi ~/.vimrc
+vi ~/.vimrc
 ```                                 
 
 ```
@@ -92,7 +92,7 @@ syntax on   " 문법 하이라이트 킴"
 
 - vim 컬러 스키마(jellybeans) 설치:
 ```
-$ curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim > ~/.vim/colors/jellybeans.vim
+curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim > ~/.vim/colors/jellybeans.vim
 ```
 
 --------------------------------------------------------------------------------------------------
@@ -169,12 +169,12 @@ http://nolboo.kim/blog/2015/08/21/oh-my-zsh/</br>
 ## powerline
 python 2.7 혹은 3.3 이상이 필요하다고 한다. 그래서 혹시나 설치해본다
 ```
-$ sudo apt-get install python-pip git
+sudo apt-get install python-pip git
 ```
 
 - powerline 설치:
 ```
-$ sudo pip install git+git://github.com/Lokaltog/powerline
+sudo pip install git+git://github.com/Lokaltog/powerline
 ```
 
 - font 설치:
@@ -203,7 +203,7 @@ set t_Co=256
 
 - 삭제시:
 ```
-$ sudo pip uninstall powerline
+sudo pip uninstall powerline
 ```
 
 ○ 참고자료:</br>
@@ -217,13 +217,13 @@ https://humb1ec0ding.github.io/2013/11/26/2013-11-26-ubuntu-powerline-beautify-t
 - 우선 설치전 git을 install 해야 한다.
 
 #### Vundle 설치
-> Set up Vundle:
+1. Set up Vundle
 ~/.vim/bundle/ 폴더 안에 소스를 복사하여 넣어주면 작업이 완료된다.
 ```
 user$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
 ```
 
-> Configure Plugins:
+2. Configure Plugins
 ```
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -266,27 +266,36 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 ```
 
+-----------------------------------------------------------------------------------------------
+==================================================================================================
+--------------------------------------------------------------------------------------------------
+
+
 #### NERDTree 설치
-> Search Plugins:
+
+1. Search Plugins
 'Vundle' 설치후 vi플러그인에 들어가 명령행 모드에 다음과 같이 실행한다.
 ```
 :PluginSearch NERD
 ```
 
-> Add Plugin to ~/.vimrc:
+2. Add Plugin to ~/.vimrc
 '.vimrc'에 다음과 같은 명령어로 추가한다.
 ```
-user$ echo "Plugin 'The-NERD-Tree'" >> ~/.vimrc  
+echo "Plugin 'The-NERD-Tree'" >> ~/.vimrc  
 ```
 
-> Install Plugin:
+3. Install Plugin
 'vim'을 실행후 명령행 모드에서 ':PluginInstall'이라고 실행하면 된다.
 
 ○ 참고자료:</br>
 https://dobest.io/install-vundle-and-nerdtree/</br> 
 (개인적으로 이런 멋진 plug-in을 알려주신 갓수찬님께 감사를...)
 
+-----------------------------------------------------------------------------------------------
+==================================================================================================
 --------------------------------------------------------------------------------------------------
+
 
 ## pyenv + virtualenv + autoenv
 - 각각의 plugin은 Python 개발 효율성을 증대해주는 유용한 도구들이다 발췌한 요약 기능을 쓰자면
@@ -320,17 +329,17 @@ make install
 #### pyenv 설치
 - Install:
 ```
-$ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 ```
 
 - Update:
 ```
-$ pyenv update
+pyenv update
 ```
 
 - Uninstall: 
 ```
-$ rm -fr ~/.pyenv
+rm -fr ~/.pyenv
 ```
 
 그리고 '.zshrc'(zsh이 설치되었다면) 그게 아니면 '.bashrc'에 아래 내용을 삭제한다.
@@ -342,33 +351,33 @@ eval "$(pyenv virtualenv-init -)"
 
 ========================================================================
 #### virtualenv 설치
-> Install:
+- Install:
 ```
-$ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
-```
-
-> Add my shell(~/.zshenv 파일 대신에 ~/.bash_profile에 추가하는 것을 추천한다고 적혀있다.):
-```
-$ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
+git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 ```
 
-> Restart your shell to enable pyenv-virtualenv:
+- Add my shell(~/.zshenv 파일 대신에 ~/.bash_profile에 추가하는 것을 추천한다고 적혀있다.):
 ```
-$ exec "$SHELL"
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
+```
+
+- Restart your shell to enable pyenv-virtualenv:
+```
+exec "$SHELL"
 ```
 
 ========================================================================
 #### autoenv 설치
 - pip install:
 ```
-$ pip install autoenv
-$ echo "source `which activate.sh`" >> ~/.bashrc
+pip install autoenv
+echo "source `which activate.sh`" >> ~/.bashrc
 ```
 
 - git install:
 ```
-$ git clone git://github.com/kennethreitz/autoenv.git ~/.autoenv
-$ echo 'source ~/.autoenv/activate.sh' >> ~/.bashrc
+git clone git://github.com/kennethreitz/autoenv.git ~/.autoenv
+echo 'source ~/.autoenv/activate.sh' >> ~/.bashrc
 ```
 
 ○ 참고자료:</br>
@@ -380,15 +389,24 @@ http://yujuwon.tistory.com/entry/pyenv-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0<br/>
 http://blog.radup.net/38</br>
 
 --------------------------------------------------------------------------------------------------
+==================================================================================================
+--------------------------------------------------------------------------------------------------
+
                                         
 ## google chrome
 ```  
-$ sudo add-apt repository
-$ sudo apt-get update
-$ sudo apt-get install google-chrome-stable
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+
+sudo apt-get update
+sudo apt-get install google-chrome-stable
 ```
 ○ 참고자료:</br>
+http://askubuntu.com/questions/510056/how-to-install-google-chrome</br>
 
+--------------------------------------------------------------------------------------------------
+==================================================================================================
 --------------------------------------------------------------------------------------------------
 
 
@@ -421,6 +439,8 @@ https://www.thefanclub.co.za/how-to/ubuntu-google-drive-client-grive-and-grive-t
 http://moordev.tistory.com/80</br>
 
 --------------------------------------------------------------------------------------------------
+==================================================================================================
+--------------------------------------------------------------------------------------------------
 
                                                 
 ## sublimetext3
@@ -435,44 +455,51 @@ http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3</br>
 https://packagecontrol.io/installation</br>
 
 --------------------------------------------------------------------------------------------------
- 
+==================================================================================================
+--------------------------------------------------------------------------------------------------
+
+
 ##  slack
 slack homepage에서 다운후 설치</br>
 ○ 다운로드: https://slack.com/downloads
 
 --------------------------------------------------------------------------------------------------
- 
+==================================================================================================
+--------------------------------------------------------------------------------------------------
+
 
 ## GNOME
 - GNOME은 ubuntu의 UI를 설정해주는 프로그램이다.</br>
 보다 자신에게 편한 ubuntu의 UI사용이나 변경을 원한다면 이용하는 것이 좋다.</br>
 #### GNOME Classic
 ```
-$ sudo apt-get install gnome-session-flashback
-$ sudo apt-get install docky
+sudo apt-get install gnome-session-flashback
+sudo apt-get install docky
 ```
 
 ○ 참고자료:</br>
 
 --------------------------------------------------------------------------------------------------
- 
+==================================================================================================
+--------------------------------------------------------------------------------------------------
 
+ 
 ##  bomi player
 동영상 tool을 대부분 SMplayer로 추천하는데 개인적으로 bomi가 좀더 깔끔하고 이용하기 편했다.</br>
 아래 처럼 설치를 진행하면 되나 bomi의 update 오류가 발생했다는 점이 있다는 점을 알게 되었다.</br>
 ```
-$ sudo add-apt-repository ppa:darkin20/bomi
-$ sudo apt-get -repository ppa:ubuntu-toolchain-r/test
-$ sudo apt-get update
-$ sudo apt-get install bomi
+sudo add-apt-repository ppa:darkin20/bomi
+sudo apt-get -repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install bomi
 ```
 
 그래서 해결 점으로 다음 아래와 같은 방식으로 설치하면 문제가 임시적으로 해결된다고 한다..<br/>
 (소식에 의하면 bomi의 개발자가 개발을 잠정중단했다고 한다...)
 ```
-$ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-$ sudo apt-get update
-$ sudo apt-get install bomi
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install bomi
 ```
 
 ○ 참고자료:</br>
