@@ -1,7 +1,7 @@
 # Ubuntu Install & 환경설정 구축
 ## ubuntu를 설치함과 동시에 ubuntu에서 설정한 환경설정 등을 정리해 올려본다.=
 
-####설치 과정 이슈
+#### 설치 과정 이슈
 
 윈도우를 설치 한 후 우분투를 설치를 해야 안정적인 우분투 설치가 가능하다.<br/>
 혹은 설치 과정에서 ubuntu GRUB(리눅스 부트로더)의 설치 드라이브 설정을 잘못해서<br/>
@@ -14,7 +14,7 @@ GRUB가 ubuntu 설치를 해도 나타나지 않는 경우가 있다. 그때 경
 sudo apt-get update
 ```
 -----------------------------------------------------------------------------------------
-##### 부팅 중 부트로더가 나오지 않을때
+#### 부팅 중 부트로더가 나오지 않을때
 우선 부팅 후 ubuntu install 화면에서 *'Ubuntu without install'* 로 들어간다<br/>
 다음과 같은 명령어를 터미널 실행 후 'boot-repair'를 설치한다
 ```
@@ -23,8 +23,8 @@ $ sudo apt-get update
 $ sudo apt-get install -y boot-repair
 ```
 
-![bootrepair1](/home/feanar/사진/환경설정/boot-repair1.png)
-![bootrepair2](/home/feanar/사진/환경설정/boot-repair2.png)
+![bootrepair1](/home/feanar/사진/환경설정/boot-repair1.png)<br/>
+![bootrepair2](/home/feanar/사진/환경설정/boot-repair2.png)<br/>
     
 위 사진에 'Recommended repair (repairs most frequent problems)'를 클릭후 yes 클릭.
     
@@ -38,16 +38,34 @@ $ boot-repair
 - 참고 자료: http://deviantcj.tistory.com/493
 
 
-##### low graphic 이슈가 발생했을 때
+#### low graphic 이슈가 발생했을 때
 다음과 같이 GRUB에 ubuntu를 실행 했을때 다음과 같은 이슈가 발생했다.
 
 처음 파악한 바로는 ubuntu와 내장된 그래픽 카드 드라이버와의 연결이 제대로 읽어지지 않은 발생 한 문제로 파악되었다.<br/> 
-그래서 직접적으로 아래와 같이 그래픽카드 드라이버의 설치를 했으나...
+그래서 직접적으로 아래와 같이 그래픽카드 드라이버의 설치를 했다..... 하지만...
+1. GRUB menu에 recovery mode 
+![recovery mode1](http://i.stack.imgur.com/5kllk.png)
 
-    
+2. failsafeX를 클릭
+![recovery mode2](http://i.stack.imgur.com/R5oV8.png)
 
+3. 다음과 같은 창이 뜨면 *CTRL*+*ALT*+*F1*으로 server 계정에 접속(아이디와 비번 입력후 들어가기)
+![recovery mode3](http://i.stack.imgur.com/eLE3j.png)
 
-이슈가 해결되지 않았다..
+4. 본인의 경우 그래픽 카드를 *'nvidia'*를 사용하기 때문에 *'nvidia'*로 install 했다.
+- nvidia 경우
+```
+sudo apt-get install nvidia-current
+sudo apt-get install nvidia-current-updates
+```
+
+- AMD/ATI 경우
+```
+sudo apt-get install fglrx
+```
+
+*이슈는 해결되지 않았다..*
+
 
 그래서 다른 방법을 구글링으로 찾아보니 다음과 같은 해결 방책이 나왔다.
 - gdm이 설치 되어 있다면        
