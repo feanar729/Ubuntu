@@ -3,7 +3,7 @@
 
 설치 된 plug-in과 tools를 기록한 것들...
 
------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 
 
 ## git
@@ -11,7 +11,8 @@
 $ sudo apt-get update
 $ sudo apt-get install git
 ```
-==================================================================================================
+
+--------------------------------------------------------------------------------------------------
 
 
 ## terminator
@@ -20,7 +21,8 @@ $ sudo apt-get install git
 $ sudo apt-get update
 $ sudo apt-get install terminator
 ```
-==================================================================================================
+
+--------------------------------------------------------------------------------------------------
 
 
 ## vim
@@ -92,7 +94,8 @@ syntax on   " 문법 하이라이트 킴"
 ```
 $ curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim > ~/.vim/colors/jellybeans.vim
 ```
-==================================================================================================
+
+--------------------------------------------------------------------------------------------------
 
 
 ## zsh + oh my zsh
@@ -160,7 +163,7 @@ https://monangik.wordpress.com/2011/04/21/install-zsh-shell-on-ubuntu/
 http://seungdols.tistory.com/499
 http://nolboo.kim/blog/2015/08/21/oh-my-zsh/
 
-==================================================================================================
+--------------------------------------------------------------------------------------------------
 
 
 ## powerline
@@ -202,7 +205,8 @@ set t_Co=256
 ```
 $ sudo pip uninstall powerline
 ```
-==================================================================================================
+
+--------------------------------------------------------------------------------------------------
 
 
 ## vundle + nurdtree
@@ -274,8 +278,8 @@ user$ echo "Plugin 'The-NERD-Tree'" >> ~/.vimrc
 ○ 참고자료:<br/>
 https://dobest.io/install-vundle-and-nerdtree/<br/> 
 (개인적으로 이런 멋진 plug-in을 알려주신 갓수찬님께 감사를...)
-==================================================================================================
 
+--------------------------------------------------------------------------------------------------
 
 ## pyenv + virtualenv + autoenv
 - 각각의 plugin은 Python 개발 효율성을 증대해주는 유용한 도구들이다 발췌한 요약 기능을 쓰자면
@@ -284,19 +288,44 @@ https://dobest.io/install-vundle-and-nerdtree/<br/>
 'virtualenv' : “Virtual Python Environment builder”, 로컬에 다양한 파이썬 환경을 구축하고 사용할 수 있도록 한다.<br/> 일반적으로 Python Packages라고 부르는 ( pip install을 통해서 설치하는 ) 패키지들에 대한 의존성을 해결할 수 있다.<br/>
 'autoenv' : 만약 pyenv와 virtualenv를 통해서 의존성을 해결한다고 하더라도 작업할때마다 설정해주는 것은 귀찮은 작업이다.<br/> 특정 프로젝트 폴더로 들어가면 자동으로 개발 환경을 설정해주는 autoenv라는 스크립트를 활용하자.<br/>
 
+#### pyenv 설치 전 python files을 사용하기 위해 사전에 python을 미리 설치를 하는 것이 좋다.
+- Python 2.7 dependency 설치
+```
+sudo apt-get build-dep python2.7
+```
+
+- Python 3.5
+```
+curl -O "https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz"
+sudo apt-get install zlibc zlib1g zlib1g-dev libreadline6-dev libreadline6 libssl-dev libsqlite3-dev
+```
+
+- python 3.5 다운 후 설치
+```
+tar -xzvf Python-3.5.1.tgz
+cd Python-3.5.1
+./configure
+make
+make install
+```
+
+========================================================================
 #### pyenv 설치
 - Install:
 ```
 $ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 ```
+
 - Update:
 ```
 $ pyenv update
 ```
+
 - Uninstall: 
 ```
 $ rm -fr ~/.pyenv
 ```
+
 그리고 '.zshrc'(zsh이 설치되었다면) 그게 아니면 '.bashrc'에 아래 내용을 삭제한다.
 ```
 export PATH="~/.pyenv/bin:$PATH"
@@ -304,32 +333,46 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
 
+========================================================================
 #### virtualenv 설치
 1. Install:
 ```
 $ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 ```
+
 2. Add my shell(~/.zshenv 파일 대신에 ~/.bash_profile에 추가하는 것을 추천한다고 적혀있다.)
 ```
 $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
 ```
+
 3. Restart your shell to enable pyenv-virtualenv
 ```
 $ exec "$SHELL"
 ```
 
+========================================================================
 #### autoenv 설치
+- pip install:
+```
+$ pip install autoenv
+$ echo "source `which activate.sh`" >> ~/.bashrc
 ```
 
+- git install:
+```
+$ git clone git://github.com/kennethreitz/autoenv.git ~/.autoenv
+$ echo 'source ~/.autoenv/activate.sh' >> ~/.bashrc
 ```
 
 ○ 참고자료:<br/>
-https://github.com/yyuu/pyenv
-https://github.com/yyuu/pyenv-virtualenv
-https://github.com/kennethreitz/autoenv
-https://dobest.io/how-to-set-python-dev-env/
-==================================================================================================
+https://github.com/yyuu/pyenv</br>
+https://github.com/yyuu/pyenv-virtualenv</br>
+https://github.com/kennethreitz/autoenv</br>
+https://dobest.io/how-to-set-python-dev-env/</br>
+http://yujuwon.tistory.com/entry/pyenv-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0<br/>
+http://blog.radup.net/38</br>
 
+--------------------------------------------------------------------------------------------------
                                         
 ## google chrome
 ```  
@@ -339,7 +382,7 @@ $ sudo apt-get install google-chrome-stable
 ```
 ○ 참고자료:<br/>
 
-==================================================================================================
+--------------------------------------------------------------------------------------------------
 
 
 ## google drive          
@@ -348,8 +391,9 @@ $ sudo apt-get install google-chrome-stable
 ```
 ○ 참고자료:<br/>
 
-==================================================================================================
-                                                   
+
+--------------------------------------------------------------------------------------------------
+
                                                 
 ## sublimetext3
 ```
@@ -357,28 +401,27 @@ $ sudo apt-get install google-chrome-stable
 ```
 ○ 참고자료:<br/>
 
-==================================================================================================
-
-                                                       
+--------------------------------------------------------------------------------------------------
+ 
 ##  slack
 slack homepage에서 다운후 설치<br/>
-
 ○ 다운로드: https://slack.com/downloads
-==================================================================================================
 
+--------------------------------------------------------------------------------------------------
+ 
 
 ## GNOME
 - GNOME은 ubuntu의 UI를 설정해주는 프로그램이다.<br/>
 보다 자신에게 편한 ubuntu의 UI사용이나 변경을 원한다면 이용하는 것이 좋다.<br/>
 #### GNOME Classic
 ```
-$ sudo apt-get install gnome-session-flashback                                                        
+$ sudo apt-get install gnome-session-flashback
 $ sudo apt-get install docky
 ```
 ○ 참고자료:<br/>
 
-==================================================================================================
-
+--------------------------------------------------------------------------------------------------
+ 
 
 ##  bomi player
 개인적으로 동영상 tool을 대부분 SMplayer로 추천하는데 개인적으로 난 bomi가 좀더 깔끔하고 이용하기 편했다.<br/>
