@@ -272,8 +272,8 @@ user$ echo "Plugin 'The-NERD-Tree'" >> ~/.vimrc
 'vim'을 실행후 명령행 모드에서 ':PluginInstall'이라고 실행하면 된다.
 
 ○ 참고자료:<br/>
-https://dobest.io/install-vundle-and-nerdtree/ 
-[개인적으로 이런 멋진 plug-in을 알려주신 갓수찬님께 감사를...]
+https://dobest.io/install-vundle-and-nerdtree/<br/> 
+(개인적으로 이런 멋진 plug-in을 알려주신 갓수찬님께 감사를...)
 ==================================================================================================
 
 
@@ -297,7 +297,7 @@ $ pyenv update
 ```
 $ rm -fr ~/.pyenv
 ```
-그리고 '.zshrc'(zsh이 설치되었다면) 혹은 '.bashrc'에 아래 내용을 삭제한다.
+그리고 '.zshrc'(zsh이 설치되었다면) 그게 아니면 '.bashrc'에 아래 내용을 삭제한다.
 ```
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
@@ -305,8 +305,17 @@ eval "$(pyenv virtualenv-init -)"
 ```
 
 #### virtualenv 설치
+1. Install:
 ```
-
+$ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+```
+2. Add my shell(~/.zshenv 파일 대신에 ~/.bash_profile에 추가하는 것을 추천한다고 적혀있다.)
+```
+$ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
+```
+3. Restart your shell to enable pyenv-virtualenv
+```
+$ exec "$SHELL"
 ```
 
 #### autoenv 설치
