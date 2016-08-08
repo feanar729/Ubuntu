@@ -4,7 +4,7 @@ Ubuntu에 설치한 모든 경험 기록용
 # ubuntu 14.04
 > 환경설정 구축 경험 기록
 >>[Ubuntu install & plug-in][install & plug-in]
-[install & plug-in]: https://github.com/feanar729/Ubuntu/tree/master/ubuntu_14.04/install_vim.md
+[install & plug-in]: https://github.com/feanar729/ubuntu/blob/master/ubuntu_14.04/install_14.04.md 
 
 # ubuntu 16.04
 > Plug-in install[작성 중..]
