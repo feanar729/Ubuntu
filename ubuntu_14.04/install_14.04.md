@@ -16,22 +16,25 @@ sudo apt-get update
 -----------------------------------------------------------------------------------------
 #### 부팅 중 부트로더가 나오지 않을때
 우선 부팅 후 ubuntu install 화면에서 *'Ubuntu without install'* 로 들어간다<br/>
-다음과 같은 명령어를 터미널 실행 후 'boot-repair'를 설치한다
+다음과 같은 명령어를 터미널 실행 후 'boot-repair'를 설치한다.<br/>
 ```
 $ sudo add-apt-repository ppa:yannubuntu/boot-repair
 $ sudo apt-get update
 $ sudo apt-get install -y boot-repair
 ```
 
-![bootrepair1](/home/feanar/사진/환경설정/boot-repair1.png)<br/>
-![bootrepair2](/home/feanar/사진/환경설정/boot-repair2.png)<br/>
-    
-위 사진에 'Recommended repair (repairs most frequent problems)'를 클릭후 yes 클릭.
-    
 boot-repair를 실행
 ```
 $ boot-repair
 ```
+
+실행하면 아래와 같은 그림이 나온다.
+
+![bootrepair1](http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile29.uf.tistory.com%2Fimage%2F1638D94150C2D69D2FE359)<br/>
+![bootrepair2](http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile10.uf.tistory.com%2Fimage%2F0138D94150C2D69D306990)<br/>
+위 사진에 'Recommended repair (repairs most frequent problems)'를 클릭후 yes 클릭.
+
+![bootrepair3](http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile9.uf.tistory.com%2Fimage%2F0238D94150C2D69D31E258)<br/>
 
 다음과 같이 ok를 클릭하면 재부팅때 GRUB가 나온다.
 
@@ -40,19 +43,21 @@ $ boot-repair
 
 #### low graphic 이슈가 발생했을 때
 다음과 같이 GRUB에 ubuntu를 실행 했을때 다음과 같은 이슈가 발생했다.
+![lowgraphic](http://simpledeveloper.com/wp-content/uploads/2014/02/system_running_in_low_graphics_mode.png)<br/>
+
 
 처음 파악한 바로는 ubuntu와 내장된 그래픽 카드 드라이버와의 연결이 제대로 읽어지지 않은 발생 한 문제로 파악되었다.<br/> 
 그래서 직접적으로 아래와 같이 그래픽카드 드라이버의 설치를 했다..... 하지만...
-1. GRUB menu에 recovery mode 
+1. GRUB menu에 recovery mode<br/> 
 ![recovery mode1](http://i.stack.imgur.com/5kllk.png)
 
-2. failsafeX를 클릭
+2. failsafeX를 클릭<br/>
 ![recovery mode2](http://i.stack.imgur.com/R5oV8.png)
 
-3. 다음과 같은 창이 뜨면 *CTRL*+*ALT*+*F1*으로 server 계정에 접속(아이디와 비번 입력후 들어가기)
+3. 다음과 같은 창이 뜨면 *CTRL*+*ALT*+*F1*으로 server 계정에 접속(아이디와 비번 입력후 들어가기)<br/>
 ![recovery mode3](http://i.stack.imgur.com/eLE3j.png)
 
-4. 본인의 경우 그래픽 카드를 *'nvidia'*를 사용하기 때문에 *'nvidia'*로 install 했다.
+4. 본인의 경우 그래픽 카드를 *'nvidia'*를 사용하기 때문에 *'nvidia'*로 install 했다.<br/>
 - nvidia 경우
 ```
 sudo apt-get install nvidia-current
@@ -64,8 +69,7 @@ sudo apt-get install nvidia-current-updates
 sudo apt-get install fglrx
 ```
 
-*이슈는 해결되지 않았다..*
-
+*이슈는 해결되지 않았다..*<br/>
 
 그래서 다른 방법을 구글링으로 찾아보니 다음과 같은 해결 방책이 나왔다.
 - gdm이 설치 되어 있다면        
@@ -89,7 +93,7 @@ $ sudo reboot
 
 이후 정상작동 된것으로 보아 ubuntu내의 gdm에서 이슈가 발생하는 것으로 파악 된다.
                 
-- 참고자료: 
+- 참고자료:<br/>
 https://askubuntu.com/questions/141606/how-to-fix-the-system-is-running-in-low-graphics-mode-error
 http://simpledeveloper.com/system-running-in-low-graphics-mode/
 
