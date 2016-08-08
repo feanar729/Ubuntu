@@ -165,9 +165,10 @@ set lbr
 set incsearch "  키워드 입력시 점진적 검색
 filetype indent on "  파일 종류에 따른 구문강조
 set background=dark " 하이라이팅 lihgt / dark
-colorscheme default  "  vi 색상 테마 설정
 set backspace=eol,start,indent "  줄의 끝, 시작, 들여쓰기에서 백스페이스시 이전줄로
 set history=1000 "  vi 편집기록 기억갯수 .viminfo에 기록
+
+colorscheme default  "  vi 색상 테마 설정
 
 "colo blue "글자색 blue
 "colo default "글자색 기본값 
@@ -243,6 +244,7 @@ You can:
 다음과 같은 선택이 나온다 개인적으로 (2)을 누르고 다시 설정했다.
 
 ○ 참고자료:<br/>
+https://gist.github.com/tsabat/1498393
 http://crasy.tistory.com/146
 https://monangik.wordpress.com/2011/04/21/install-zsh-shell-on-ubuntu/
 http://seungdols.tistory.com/499
@@ -252,8 +254,43 @@ http://nolboo.kim/blog/2015/08/21/oh-my-zsh/
 
 
 ## powerline
+python 2.7 혹은 3.3 이상이 필요하다고 한다. 그래서 혹시나 설치해본다
+```
+$ sudo apt-get install python-pip git
 ```
 
+- powerline 설치
+```
+$ sudo pip install git+git://github.com/Lokaltog/powerline
+```
+
+- font 설치
+```
+wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+sudo mv PowerlineSymbols.otf /usr/share/fonts/
+sudo fc-cache -vf
+sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+```
+
+- Bash confing 설정
+```
+if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ]; then
+    source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+fi
+```
+
+- vim config 설정
+```
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+" Always show statusline
+set laststatus=2
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
+```
+
+- 삭제시
+```
+$ sudo pip uninstall powerline
 ```
 -----------------------------------------------------------------------------------------------------
 
