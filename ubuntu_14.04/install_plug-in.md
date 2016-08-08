@@ -217,13 +217,13 @@ https://humb1ec0ding.github.io/2013/11/26/2013-11-26-ubuntu-powerline-beautify-t
 - 우선 설치전 git을 install 해야 한다.
 
 #### Vundle 설치
-1. Set up Vundle:
+> Set up Vundle:
 ~/.vim/bundle/ 폴더 안에 소스를 복사하여 넣어주면 작업이 완료된다.
 ```
 user$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
 ```
 
-2. Configure Plugins:
+> Configure Plugins:
 ```
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -411,7 +411,6 @@ sudo apt-get install grive-tools
 ```
 검색창에 'grive' 라고 검색하면 'grive setup'을 실행한다
 ( 참고로 google-drive indicator는 자동 동기화 기능을 가진 App이다. )
-
 그다음 google drive와 grive의 동기화를 허용후 나타난 코드를 복사해 붙이고 동기화 시키면 
 자동적으로 google drive 폴더가 생성되어 동기화가 진행되어 google-drive의 파일들이 나온다.
 ( 파일들이 많이 있다면 동기화 하는데 시간이 많이 걸린다..  )
