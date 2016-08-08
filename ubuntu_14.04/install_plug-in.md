@@ -267,19 +267,19 @@ filetype plugin indent on    " required
 ```
 
 #### NERDTree 설치
-1. Search Plugins:
+> Search Plugins:
 'Vundle' 설치후 vi플러그인에 들어가 명령행 모드에 다음과 같이 실행한다.
 ```
 :PluginSearch NERD
 ```
 
-2. Add Plugin to ~/.vimrc:
+> Add Plugin to ~/.vimrc:
 '.vimrc'에 다음과 같은 명령어로 추가한다.
 ```
 user$ echo "Plugin 'The-NERD-Tree'" >> ~/.vimrc  
 ```
 
-3. Install Plugin:
+> Install Plugin:
 'vim'을 실행후 명령행 모드에서 ':PluginInstall'이라고 실행하면 된다.
 
 ○ 참고자료:</br>
@@ -342,17 +342,17 @@ eval "$(pyenv virtualenv-init -)"
 
 ========================================================================
 #### virtualenv 설치
-1. Install:
+> Install:
 ```
 $ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 ```
 
-2. Add my shell(~/.zshenv 파일 대신에 ~/.bash_profile에 추가하는 것을 추천한다고 적혀있다.):
+> Add my shell(~/.zshenv 파일 대신에 ~/.bash_profile에 추가하는 것을 추천한다고 적혀있다.):
 ```
 $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
 ```
 
-3. Restart your shell to enable pyenv-virtualenv:
+> Restart your shell to enable pyenv-virtualenv:
 ```
 $ exec "$SHELL"
 ```
@@ -393,20 +393,47 @@ $ sudo apt-get install google-chrome-stable
 
 
 ## google drive          
+> 먼저 grive를 설치해 의존성에 맞게 해주어야 한다.
+```
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-get update
+sudo apt-get install grive
 ```
 
+> 그 다음 grive-tools을 설치하면 된다.
 ```
+sudo add-apt-repository ppa:thefanclub/grive-tools
+sudo apt-get update
+sudo apt-get install grive-tools
+```
+
+> 사용법
+```
+검색창에 'grive' 라고 검색하면 'grive setup'을 실행한다
+( 참고로 google-drive indicator는 자동 동기화 기능을 가진 App이다. )
+
+그다음 google drive와 grive의 동기화를 허용후 나타난 코드를 복사해 붙이고 동기화 시키면 
+자동적으로 google drive 폴더가 생성되어 동기화가 진행되어 google-drive의 파일들이 나온다.
+( 파일들이 많이 있다면 동기화 하는데 시간이 많이 걸린다..  )
+```
+
 ○ 참고자료:</br>
-
+https://www.thefanclub.co.za/how-to/ubuntu-google-drive-client-grive-and-grive-tools</br>
+http://moordev.tistory.com/80</br>
 
 --------------------------------------------------------------------------------------------------
 
                                                 
 ## sublimetext3
 ```
-
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
 ```
+
 ○ 참고자료:</br>
+http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3</br>
+https://packagecontrol.io/installation</br>
 
 --------------------------------------------------------------------------------------------------
  
@@ -425,6 +452,7 @@ slack homepage에서 다운후 설치</br>
 $ sudo apt-get install gnome-session-flashback
 $ sudo apt-get install docky
 ```
+
 ○ 참고자료:</br>
 
 --------------------------------------------------------------------------------------------------

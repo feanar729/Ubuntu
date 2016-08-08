@@ -94,11 +94,15 @@ $ sudo apt-get install gdm
 $ sudo reboot
 ```
 
-이후 정상작동 된것으로 보아 ubuntu내의 gdm에서 이슈가 발생하는 것으로 파악 된다.
-                
+이후 정상작동 된것으로 보아 ubuntu내의 gdm에서 이슈가 발생하는 것으로 파악 된다.</br>
+
+참고로 업데이트는 하지 말고 *추가 드라이버를 다시 열면 드라이버가 나온다.*</br>
+시스템 업데이트를 먼저 하면 X.Org X server로 설치하기 때문에 아래 사진처럼 nvidia driver로 설정해 준다</br>
+![Nvidia Graphic](http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile1.uf.tistory.com%2Fimage%2F25596135551EA0CC114785)
+
 ○ 참고자료:<br/>
-https://askubuntu.com/questions/141606/how-to-fix-the-system-is-running-in-low-graphics-mode-error
-http://simpledeveloper.com/system-running-in-low-graphics-mode/
+https://askubuntu.com/questions/141606/how-to-fix-the-system-is-running-in-low-graphics-mode-error</br>
+http://simpledeveloper.com/system-running-in-low-graphics-mode/</br>
 
 ====================================================================================================
 
