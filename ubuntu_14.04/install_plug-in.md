@@ -90,7 +90,7 @@ set tabstop=4 " 탭을 4칸으로
 syntax on   " 문법 하이라이트 킴"
 ```
 
-- vim 컬러 스키마(jellybeans) 설치
+- vim 컬러 스키마(jellybeans) 설치:
 ```
 $ curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim > ~/.vim/colors/jellybeans.vim
 ```
@@ -99,18 +99,18 @@ $ curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/j
 
 
 ## zsh + oh my zsh
-zsh 설치
+- zsh 설치:
 ```
 $ sudo apt-get update && sudo apt-get install zsh
 ```
 
-ZSH 기본값 설정(zsh 위치 확인 후 그 확인된 root로 기본값 설정)
+- ZSH 기본값 설정(zsh 위치 확인 후 그 확인된 root로 기본값 설정):
 ```
 which zsh 
 chsh -s /usr/bin/zsh
 ```
 
-oh-my-zsh 설치
+- oh-my-zsh 설치:
 ```
 wget –no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O – | sh
 ```
@@ -156,12 +156,12 @@ You can:
 ```
 다음과 같은 선택이 나온다 개인적으로 (2)을 누르고 다시 설정했다.
 
-○ 참고자료:<br/>
-https://gist.github.com/tsabat/1498393
-http://crasy.tistory.com/146
-https://monangik.wordpress.com/2011/04/21/install-zsh-shell-on-ubuntu/
-http://seungdols.tistory.com/499
-http://nolboo.kim/blog/2015/08/21/oh-my-zsh/
+○ 참고자료:</br>
+https://gist.github.com/tsabat/1498393</br>
+http://crasy.tistory.com/146</br>
+https://monangik.wordpress.com/2011/04/21/install-zsh-shell-on-ubuntu/</br>
+http://seungdols.tistory.com/499</br>
+http://nolboo.kim/blog/2015/08/21/oh-my-zsh/</br>
 
 --------------------------------------------------------------------------------------------------
 
@@ -172,12 +172,12 @@ python 2.7 혹은 3.3 이상이 필요하다고 한다. 그래서 혹시나 설�
 $ sudo apt-get install python-pip git
 ```
 
-- powerline 설치
+- powerline 설치:
 ```
 $ sudo pip install git+git://github.com/Lokaltog/powerline
 ```
 
-- font 설치
+- font 설치:
 ```
 wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 sudo mv PowerlineSymbols.otf /usr/share/fonts/
@@ -185,14 +185,14 @@ sudo fc-cache -vf
 sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 ```
 
-- Bash confing 설정
+- Bash confing 설정:
 ```
 if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ]; then
     source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 fi
 ```
 
-- vim config 설정
+- vim config 설정:
 ```
 set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 " Always show statusline
@@ -201,10 +201,14 @@ set laststatus=2
 set t_Co=256
 ```
 
-- 삭제시
+- 삭제시:
 ```
 $ sudo pip uninstall powerline
 ```
+
+○ 참고자료:</br>
+http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin</br>
+https://humb1ec0ding.github.io/2013/11/26/2013-11-26-ubuntu-powerline-beautify-the-stateline/</br>
 
 --------------------------------------------------------------------------------------------------
 
@@ -213,12 +217,13 @@ $ sudo pip uninstall powerline
 - 우선 설치전 git을 install 해야 한다.
 
 #### Vundle 설치
-1. Set up Vundle
+1. Set up Vundle:
 ~/.vim/bundle/ 폴더 안에 소스를 복사하여 넣어주면 작업이 완료된다.
 ```
 user$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
 ```
-2. Configure Plugins
+
+2. Configure Plugins:
 ```
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -262,21 +267,23 @@ filetype plugin indent on    " required
 ```
 
 #### NERDTree 설치
-1. Search Plugins
+1. Search Plugins:
 'Vundle' 설치후 vi플러그인에 들어가 명령행 모드에 다음과 같이 실행한다.
 ```
 :PluginSearch NERD
 ```
-2. Add Plugin to ~/.vimrc
+
+2. Add Plugin to ~/.vimrc:
 '.vimrc'에 다음과 같은 명령어로 추가한다.
 ```
 user$ echo "Plugin 'The-NERD-Tree'" >> ~/.vimrc  
 ```
-3. Install Plugin
+
+3. Install Plugin:
 'vim'을 실행후 명령행 모드에서 ':PluginInstall'이라고 실행하면 된다.
 
-○ 참고자료:<br/>
-https://dobest.io/install-vundle-and-nerdtree/<br/> 
+○ 참고자료:</br>
+https://dobest.io/install-vundle-and-nerdtree/</br> 
 (개인적으로 이런 멋진 plug-in을 알려주신 갓수찬님께 감사를...)
 
 --------------------------------------------------------------------------------------------------
@@ -284,9 +291,9 @@ https://dobest.io/install-vundle-and-nerdtree/<br/>
 ## pyenv + virtualenv + autoenv
 - 각각의 plugin은 Python 개발 효율성을 증대해주는 유용한 도구들이다 발췌한 요약 기능을 쓰자면
 
-'pyenv' : "Simple Python Version Management", 로컬에 다양한 파이썬 버전을 설치하고 사용할 수 있도록 한다.<br/> pyenv를 사용함으로써 파이썬 버전에 대한 의존성을 해결할 수 있다.<br/>
-'virtualenv' : “Virtual Python Environment builder”, 로컬에 다양한 파이썬 환경을 구축하고 사용할 수 있도록 한다.<br/> 일반적으로 Python Packages라고 부르는 ( pip install을 통해서 설치하는 ) 패키지들에 대한 의존성을 해결할 수 있다.<br/>
-'autoenv' : 만약 pyenv와 virtualenv를 통해서 의존성을 해결한다고 하더라도 작업할때마다 설정해주는 것은 귀찮은 작업이다.<br/> 특정 프로젝트 폴더로 들어가면 자동으로 개발 환경을 설정해주는 autoenv라는 스크립트를 활용하자.<br/>
+'pyenv' : "Simple Python Version Management", 로컬에 다양한 파이썬 버전을 설치하고 사용할 수 있도록 한다.</br> pyenv를 사용함으로써 파이썬 버전에 대한 의존성을 해결할 수 있다.</br>
+'virtualenv' : “Virtual Python Environment builder”, 로컬에 다양한 파이썬 환경을 구축하고 사용할 수 있도록 한다.</br> 일반적으로 Python Packages라고 부르는 ( pip install을 통해서 설치하는 ) 패키지들에 대한 의존성을 해결할 수 있다.</br>
+'autoenv' : 만약 pyenv와 virtualenv를 통해서 의존성을 해결한다고 하더라도 작업할때마다 설정해주는 것은 귀찮은 작업이다.</br> 특정 프로젝트 폴더로 들어가면 자동으로 개발 환경을 설정해주는 autoenv라는 스크립트를 활용하자.</br>
 
 #### pyenv 설치 전 python files을 사용하기 위해 사전에 python을 미리 설치를 하는 것이 좋다.
 - Python 2.7 dependency 설치
@@ -340,12 +347,12 @@ eval "$(pyenv virtualenv-init -)"
 $ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 ```
 
-2. Add my shell(~/.zshenv 파일 대신에 ~/.bash_profile에 추가하는 것을 추천한다고 적혀있다.)
+2. Add my shell(~/.zshenv 파일 대신에 ~/.bash_profile에 추가하는 것을 추천한다고 적혀있다.):
 ```
 $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
 ```
 
-3. Restart your shell to enable pyenv-virtualenv
+3. Restart your shell to enable pyenv-virtualenv:
 ```
 $ exec "$SHELL"
 ```
@@ -364,7 +371,7 @@ $ git clone git://github.com/kennethreitz/autoenv.git ~/.autoenv
 $ echo 'source ~/.autoenv/activate.sh' >> ~/.bashrc
 ```
 
-○ 참고자료:<br/>
+○ 참고자료:</br>
 https://github.com/yyuu/pyenv</br>
 https://github.com/yyuu/pyenv-virtualenv</br>
 https://github.com/kennethreitz/autoenv</br>
@@ -380,7 +387,7 @@ $ sudo add-apt repository
 $ sudo apt-get update
 $ sudo apt-get install google-chrome-stable
 ```
-○ 참고자료:<br/>
+○ 참고자료:</br>
 
 --------------------------------------------------------------------------------------------------
 
@@ -389,7 +396,7 @@ $ sudo apt-get install google-chrome-stable
 ```
 
 ```
-○ 참고자료:<br/>
+○ 참고자료:</br>
 
 
 --------------------------------------------------------------------------------------------------
@@ -399,33 +406,33 @@ $ sudo apt-get install google-chrome-stable
 ```
 
 ```
-○ 참고자료:<br/>
+○ 참고자료:</br>
 
 --------------------------------------------------------------------------------------------------
  
 ##  slack
-slack homepage에서 다운후 설치<br/>
+slack homepage에서 다운후 설치</br>
 ○ 다운로드: https://slack.com/downloads
 
 --------------------------------------------------------------------------------------------------
  
 
 ## GNOME
-- GNOME은 ubuntu의 UI를 설정해주는 프로그램이다.<br/>
-보다 자신에게 편한 ubuntu의 UI사용이나 변경을 원한다면 이용하는 것이 좋다.<br/>
+- GNOME은 ubuntu의 UI를 설정해주는 프로그램이다.</br>
+보다 자신에게 편한 ubuntu의 UI사용이나 변경을 원한다면 이용하는 것이 좋다.</br>
 #### GNOME Classic
 ```
 $ sudo apt-get install gnome-session-flashback
 $ sudo apt-get install docky
 ```
-○ 참고자료:<br/>
+○ 참고자료:</br>
 
 --------------------------------------------------------------------------------------------------
  
 
 ##  bomi player
-개인적으로 동영상 tool을 대부분 SMplayer로 추천하는데 개인적으로 난 bomi가 좀더 깔끔하고 이용하기 편했다.<br/>
-아래 처럼 설치를 진행하면 되나 bomi의 update 오류가 발생했다는 점이 있다는 점을 알게 되었다.<br/>
+동영상 tool을 대부분 SMplayer로 추천하는데 개인적으로 bomi가 좀더 깔끔하고 이용하기 편했다.</br>
+아래 처럼 설치를 진행하면 되나 bomi의 update 오류가 발생했다는 점이 있다는 점을 알게 되었다.</br>
 ```
 $ sudo add-apt-repository ppa:darkin20/bomi
 $ sudo apt-get -repository ppa:ubuntu-toolchain-r/test
@@ -440,5 +447,7 @@ $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 $ sudo apt-get update
 $ sudo apt-get install bomi
 ```
-○ 참고자료:<br/>
+
+○ 참고자료:</br>
+http://logon.tistory.com/283</br>
 
