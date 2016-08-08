@@ -38,7 +38,7 @@ $ boot-repair
 
 다음과 같이 ok를 클릭하면 재부팅때 GRUB가 나온다.
 
-## ○ 참고 자료: http://deviantcj.tistory.com/493
+○ 참고 자료: http://deviantcj.tistory.com/493
 
 ----------------------------------------------------------------------------------------------
 
@@ -96,7 +96,7 @@ $ sudo reboot
 
 이후 정상작동 된것으로 보아 ubuntu내의 gdm에서 이슈가 발생하는 것으로 파악 된다.
                 
-## ○ 참고자료:<br/>
+○ 참고자료:<br/>
 https://askubuntu.com/questions/141606/how-to-fix-the-system-is-running-in-low-graphics-mode-error
 http://simpledeveloper.com/system-running-in-low-graphics-mode/
 
@@ -131,6 +131,21 @@ $ vi ~/.vimrc
 ```                                 
 
 ```
+set number  " line 표시를 해줍니다.
+set shiftwidth=4    " shift를 4칸으로 ( >, >>, <, << 등의 명령어)
+set tabstop=4   " tab을 4칸으로
+set ignorecase  " 검색시 대소문자 구별하지않음
+set hlsearch    " 검색시 하이라이트(색상 강조)
+set expandtab   " tab 대신 띄어쓰기로
+set nocompatible    " 방향키로 이동가능
+set bs=indent,eol,start " backspace 키 사용 가능
+set history=1000    " 명령어에 대한 히스토리를 1000개까지
+set ruler   " 상태표시줄에 커서의 위치 표시
+set nobackup    " 백업파일을 만들지 않음
+set title       " 제목을 표시
+set showmatch   " 매칭되는 괄호를 보여줌
+set wmnu    " tab 자동완성시 가능한 목록을 보여줌
+
 set nocompatible " 오리지날 VI와 호환하지 않음
 set autoindent  " 자동 들여쓰기
 set cindent " C 프로그래밍용 자동 들여쓰기
@@ -148,28 +163,11 @@ set tenc=utf-8      " 터미널 인코딩
 set hlsearch " 검색어 강조, set hls 도 가능
 set lbr
 set incsearch "  키워드 입력시 점진적 검색
-syntax on "  구문강조 사용
 filetype indent on "  파일 종류에 따른 구문강조
 set background=dark " 하이라이팅 lihgt / dark
-colorscheme peachpuff  "  vi 색상 테마 설정
+colorscheme default  "  vi 색상 테마 설정
 set backspace=eol,start,indent "  줄의 끝, 시작, 들여쓰기에서 백스페이스시 이전줄로
 set history=1000 "  vi 편집기록 기억갯수 .viminfo에 기록
-
-set number  " line 표시를 해줍니다.
-set ai  " auto indent
-set shiftwidth=4    " shift를 4칸으로 ( >, >>, <, << 등의 명령어)
-set tabstop=4   " tab을 4칸으로
-set ignorecase  " 검색시 대소문자 구별하지않음
-set hlsearch    " 검색시 하이라이트(색상 강조)
-set expandtab   " tab 대신 띄어쓰기로
-set nocompatible    " 방향키로 이동가능
-set bs=indent,eol,start " backspace 키 사용 가능
-set history=1000    " 명령어에 대한 히스토리를 1000개까지
-set ruler   " 상태표시줄에 커서의 위치 표시
-set nobackup    " 백업파일을 만들지 않음
-set title       " 제목을 표시
-set showmatch   " 매칭되는 괄호를 보여줌
-set wmnu    " tab 자동완성시 가능한 목록을 보여줌
 
 "colo blue "글자색 blue
 "colo default "글자색 기본값 
@@ -187,9 +185,69 @@ syntax on   " 문법 하이라이트 킴"
 -----------------------------------------------------------------------------------------------------
 
 ## zsh + oh my zsh
+zsh 설치
 ```
-$
+$ sudo apt-get update && sudo apt-get install zsh
 ```
+
+ZSH 기본값 설정(zsh 위치 확인 후 그 확인된 root로 기본값 설정)
+```
+which zsh 
+chsh -s /usr/bin/zsh
+```
+
+oh-my-zsh 설치
+```
+wget –no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O – | sh
+```
+
+THEME는 agnoster로 설정했다.
+~/.zshrc 로 들어가 아래와 같이 설정한다.
+```
+ZSH_THEME = "agnoster"
+```
+
+Font가 깨진 zsh agnoster 테마가 나온다면 fonts를 받아 설치후 font를 ubuntu mono로 설정해준다.
+```
+git clone https://github.com/powerline/fonts.git
+
+cd fonts
+./install.sh
+```
+
+oh-my-zsh 설치후 
+```
+This is the Z Shell configuration function for new users,
+zsh-newuser-install.
+You are seeing this message because you have no zsh startup files
+(the files .zshenv, .zprofile, .zshrc, .zlogin in the directory
+~).  This function can help you with a few settings that should
+make your use of the shell easier.
+
+You can:
+
+(q)  Quit and do nothing.  The function will be run again next time.
+
+(0)  Exit, creating the file ~/.zshrc containing just a comment.
+     That will prevent this function being run again.
+
+(1)  Continue to the main menu.
+
+(2)  Populate your ~/.zshrc with the configuration recommended
+     by the system administrator and exit (you will need to edit
+     the file by hand, if so desired).
+
+--- Type one of the keys in parentheses --- 
+
+```
+다음과 같은 선택이 나온다 개인적으로 (2)을 누르고 다시 설정했다.
+
+○ 참고자료:<br/>
+http://crasy.tistory.com/146
+https://monangik.wordpress.com/2011/04/21/install-zsh-shell-on-ubuntu/
+http://seungdols.tistory.com/499
+http://nolboo.kim/blog/2015/08/21/oh-my-zsh/
+
 -----------------------------------------------------------------------------------------------------
 
 
@@ -240,7 +298,7 @@ $ sudo apt-get install google-chrome-stable
                                                        
 ##  slack
 slack homepage에서 다운후 설치<br/>
-homepage: https://slack.com/downloads
+- 다운로드: https://slack.com/downloads
 -----------------------------------------------------------------------------------------------------
 
 
