@@ -330,9 +330,26 @@ cd Python-3.5.1
 make
 make install
 ```
+#### 추가 문제..[pip install 이 안먹히는 문제 발생 2016.08.09]
+python-pip를 설치를 하는 것으로 문제해결(둘 중 하나만 하면 됨)
+- A 설치방법
+```
+sudo apt-get update
+sudo apt-get -y install python-pip
+```
+
+- B 설치방법
+```
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+python get-pip.py
+```
+
+○ 참고자료:</br>
+http://www.liquidweb.com/kb/how-to-install-pip-on-ubuntu-14-04-lts/</br>
 
 ========================================================================
 #### pyenv 설치
+*[2016.08.10]zsh로 설치 했다면 끝에 install curl 끝에 *'bash'*가 아닌 *'zsh'*로 설치해야 한다.
 - Install:
 ```
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
@@ -459,6 +476,21 @@ sudo apt-get install sublime-text-installer
 ○ 참고자료:</br>
 http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3</br>
 https://packagecontrol.io/installation</br>
+#
+--------------------------------------------------------------------------------------------------
+==================================================================================================
+--------------------------------------------------------------------------------------------------
+
+
+## ATOM 
+```
+sudo add-apt-repository ppa:webupd8team/atom 
+sudo apt-get update
+sudo apt-get install atom
+```
+
+○ 참고자료:</br>
+http://logon.tistory.com/392</br>
 
 --------------------------------------------------------------------------------------------------
 ==================================================================================================
@@ -483,7 +515,31 @@ sudo apt-get install gnome-session-flashback
 sudo apt-get install docky
 ```
 
+#### Numix Theme
+```
+sudo apt-get-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle
+```
+
+#### Cairo-Dock
+- Cairo-Dock은 좌측에 있는 상태표시줄을 하단으로 옮겨 맥같이 사용하게 해주는 UI 프로그램이다.
+```
+sudo apt-get update
+sudo apt-get install cairo-dock
+```
+
+#### unity-tweak-tool
+- ubuntu 런처 및 테마 기본 폰트 설정등을 GUI 환경에서 쉽게 변경하게 해주는 프로그램이다.</br>
+현재는 개발 중단으로 인해 우분투 16.04 버전에서는 사용할 수 없고 별도의 프로그램을 설치해야 하는데 이 블로그에 설명이 나온다. *http://logon.tistory.com/349*
+```
+sudo apt-get install unity-tweak-tool
+```
+
 ○ 참고자료:</br>
+http://logon.tistory.com/392</br>
+http://logon.tistory.com/349</br>
+
 
 --------------------------------------------------------------------------------------------------
 ==================================================================================================
