@@ -310,7 +310,7 @@ https://dobest.io/install-vundle-and-nerdtree/</br>
 'virtualenv' : “Virtual Python Environment builder”, 로컬에 다양한 파이썬 환경을 구축하고 사용할 수 있도록 한다.</br> 일반적으로 Python Packages라고 부르는 ( pip install을 통해서 설치하는 ) 패키지들에 대한 의존성을 해결할 수 있다.</br>
 'autoenv' : 만약 pyenv와 virtualenv를 통해서 의존성을 해결한다고 하더라도 작업할때마다 설정해주는 것은 귀찮은 작업이다.</br> 특정 프로젝트 폴더로 들어가면 자동으로 개발 환경을 설정해주는 autoenv라는 스크립트를 활용하자.</br>
 
-#### pyenv 설치 전 의존성 패키지를 미리 빌드해 놓는 것이 좋다.[]
+#### pyenv 설치 전 의존성 패키지를 미리 빌드해 놓는 것이 좋다.
 - 설치전 의존성 패키지 설치
 ```
 sudo apt-get install zlibc zlib1g zlib1g-dev libreadline6-dev libreadline6 libssl-dev libsqlite3-dev
@@ -349,7 +349,7 @@ http://www.liquidweb.com/kb/how-to-install-pip-on-ubuntu-14-04-lts/</br>
 
 ========================================================================
 #### pyenv 설치
-*[2016.08.10]zsh로 설치 했다면 끝에 install curl 끝에 **'bash'**가 아닌 **'zsh'**로 설치해야 한다.
+[2016.08.10]zsh로 설치 했다면 끝에 install curl 끝에 **'bash'**가 아닌 **'zsh'**로 설치해야 한다.
 - Install:
 ```
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
