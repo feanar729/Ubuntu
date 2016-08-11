@@ -311,10 +311,11 @@ https://dobest.io/install-vundle-and-nerdtree/</br>
 'autoenv' : 만약 pyenv와 virtualenv를 통해서 의존성을 해결한다고 하더라도 작업할때마다 설정해주는 것은 귀찮은 작업이다.</br> 특정 프로젝트 폴더로 들어가면 자동으로 개발 환경을 설정해주는 autoenv라는 스크립트를 활용하자.</br>
 
 #### pyenv 설치 전 의존성 패키지를 미리 빌드해 놓는 것이 좋다.
-- 설치전 의존성 패키지 설치
+- 설치전 의존성 패키지 설치</br>
 [개발자 yyuu의 공통 빌드 prolblems: https://github.com/yyuu/pyenv/wiki/Common-build-problems]
 ```
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev\libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+         libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
 ```
 
 - Python 3.5
@@ -419,6 +420,7 @@ https://dobest.io/how-to-set-python-dev-env/</br>
 http://yujuwon.tistory.com/entry/pyenv-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0<br/>
 http://blog.radup.net/38</br>
 http://gyus.me/?p=475</br>
+
 --------------------------------------------------------------------------------------------------
 ==================================================================================================
 --------------------------------------------------------------------------------------------------
@@ -484,7 +486,7 @@ sudo apt-get install sublime-text-installer
 ○ 참고자료:</br>
 http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3</br>
 https://packagecontrol.io/installation</br>
-#
+
 --------------------------------------------------------------------------------------------------
 ==================================================================================================
 --------------------------------------------------------------------------------------------------
