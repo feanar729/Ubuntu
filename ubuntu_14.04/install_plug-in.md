@@ -312,8 +312,9 @@ https://dobest.io/install-vundle-and-nerdtree/</br>
 
 #### pyenv 설치 전 의존성 패키지를 미리 빌드해 놓는 것이 좋다.
 - 설치전 의존성 패키지 설치
+[개발자 yyuu의 공통 빌드 prolblems: https://github.com/yyuu/pyenv/wiki/Common-build-problems]
 ```
-sudo apt-get install zlibc zlib1g zlib1g-dev libreadline6-dev libreadline6 libssl-dev libsqlite3-dev
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev\libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
 ```
 
 - Python 3.5
@@ -354,6 +355,13 @@ http://www.liquidweb.com/kb/how-to-install-pip-on-ubuntu-14-04-lts/</br>
 ```
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 ```
+설치가 성공적으로 되면 아래 문구에서 '.zshrc'(설치된게 아니면 '.bashrc')에 아래 내용을 넣는다.
+```
+export PATH="/home/feanar/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
 
 - Update:
 ```
@@ -394,13 +402,13 @@ exec "$SHELL"
 - pip install:
 ```
 pip install autoenv
-echo "source `which activate.sh`" >> ~/.bashrc
+echo "source `which activate.sh`" >> ~/.bash_profile
 ```
 
 - git install:
 ```
 git clone git://github.com/kennethreitz/autoenv.git ~/.autoenv
-echo 'source ~/.autoenv/activate.sh' >> ~/.bashrc
+echo 'source ~/.autoenv/activate.sh' >> ~/.bash_profile
 ```
 
 ○ 참고자료:</br>
@@ -410,7 +418,7 @@ https://github.com/kennethreitz/autoenv</br>
 https://dobest.io/how-to-set-python-dev-env/</br>
 http://yujuwon.tistory.com/entry/pyenv-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0<br/>
 http://blog.radup.net/38</br>
-
+http://gyus.me/?p=475</br>
 --------------------------------------------------------------------------------------------------
 ==================================================================================================
 --------------------------------------------------------------------------------------------------
@@ -517,7 +525,7 @@ sudo apt-get install docky
 
 #### Numix Theme
 ```
-sudo apt-get-repository ppa:numix/ppa
+sudo add-apt-repository ppa:numix/ppa
 sudo apt-get update
 sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle
 ```
@@ -550,8 +558,7 @@ http://logon.tistory.com/349</br>
 동영상 tool을 대부분 SMplayer로 추천하는데 개인적으로 bomi가 좀더 깔끔하고 이용하기 편했다.</br>
 아래 처럼 설치를 진행하면 되나 bomi의 update 오류가 발생했다는 점이 있다는 점을 알게 되었다.</br>
 ```
-sudo add-apt-repository ppa:darkin20/bomi
-sudo apt-get -repository ppa:ubuntu-toolchain-r/test
+sudo add-apt-repository ppa:darklin20/bomi
 sudo apt-get update
 sudo apt-get install bomi
 ```
