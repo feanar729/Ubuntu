@@ -106,6 +106,10 @@ http://simpledeveloper.com/system-running-in-low-graphics-mode/</br>
 
 ====================================================================================================
 
+### fctix 한영키 적용(16.04)
+[fctix][hangul]
+[hangul]: http://lofty87.tistory.com/3
+
 ### install plug-in 기록
 [install_plug-in][plugin]
 [plugin]: https://github.com/feanar729/ubuntu/blob/master/ubuntu_14.04/install_plug-in.md

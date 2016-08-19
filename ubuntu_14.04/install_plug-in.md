@@ -162,6 +162,7 @@ You can:
 다음과 같은 선택이 나온다 개인적으로 (2)을 누르고 다시 설정했다.
 
 ○ 참고자료:</br>
+https://nolboo.kim/blog/2015/08/21/oh-my-zsh/</br>
 https://gist.github.com/tsabat/1498393</br>
 http://crasy.tistory.com/146</br>
 https://monangik.wordpress.com/2011/04/21/install-zsh-shell-on-ubuntu/</br>
