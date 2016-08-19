@@ -112,12 +112,12 @@ $ sudo apt-get update && sudo apt-get install zsh
 - ZSH 기본값 설정(zsh 위치 확인 후 그 확인된 root로 기본값 설정):
 ```
 which zsh 
-chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh
 ```
 
 - oh-my-zsh 설치:
 ```
-wget –no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O – | sh
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh  
 ```
 
 THEME는 agnoster로 설정했다.
@@ -318,20 +318,6 @@ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
          libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
 ```
 
-- Python 3.5
-```
-curl -O "https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz"
-```
-
-- python 3.5 다운 후 설치
-```
-tar -xzvf Python-3.5.1.tgz
-cd Python-3.5.1
-./configure
-make
-make install
-```
-
 #### 추가 문제..[pip install 이 안먹히는 문제 발생 2016.08.09]
 python-pip를 설치를 하는 것으로 문제해결(둘 중 하나만 하면 됨)
 - A 설치방법
@@ -388,7 +374,7 @@ eval "$(pyenv virtualenv-init -)"
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 ```
 
-- Add my shell(~/.zshenv 파일 대신에 ~/.bash_profile에 추가하는 것을 추천한다고 적혀있다.):
+- Add my shell(~/.zshenv 파일 대신에 ~/.bash_profile에 추가하는 것을 추천한다고 적혀있다. 개인적으로 난 .zshrc에 적용했다.):
 ```
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
 ```
@@ -486,6 +472,30 @@ sudo apt-get install sublime-text-installer
 ○ 참고자료:</br>
 http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3</br>
 https://packagecontrol.io/installation</br>
+
+--------------------------------------------------------------------------------------------------
+==================================================================================================
+--------------------------------------------------------------------------------------------------
+
+## Pycharm 
+- Install
+```
+sudo add-apt-repository ppa:mystic-mirage/pycharm
+sudo apt-get update
+sudo apt-get install pycharm
+```
+
+- Remove
+```
+# for community edtion
+sudo apt-get remove pycharm-community
+
+# for professional version
+sudo apt-get remove pycharm
+```
+
+○ 참고자료:</br>
+http://goodtogreate.tistory.com/entry/PyCharm%EC%9D%84-%EC%9A%B0%EB%B6%84%ED%88%AC-1404%EC%84%A4%EC%B9%98-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95i</br>
 
 --------------------------------------------------------------------------------------------------
 ==================================================================================================
