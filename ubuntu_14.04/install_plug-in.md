@@ -109,15 +109,16 @@ curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jel
 $ sudo apt-get update && sudo apt-get install zsh
 ```
 
-- ZSH 기본값 설정(zsh 위치 확인 후 그 확인된 root로 기본값 설정):
+- ZSH 기본값 설정(zsh 위치 확인 후 그 확인된 root로 기본값 설정 및 확인):
 ```
-which zsh 
-sudo chsh -s /usr/bin/zsh
+chsh -s `which zsh`
+
+echo $SHELL
 ```
 
 - oh-my-zsh 설치:
 ```
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh  
+$ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 ```
 
 THEME는 agnoster로 설정했다.
