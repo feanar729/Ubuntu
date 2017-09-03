@@ -125,7 +125,7 @@ $ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh 
 THEME는 agnoster로 설정했다.
 ~/.zshrc 로 들어가 아래와 같이 설정한다.
 ```
-ZSH_THEME = "agnoster"
+ZSH_THEME="agnoster"
 ```
 
 Font가 깨진 zsh agnoster 테마가 나온다면 fonts를 받아 설치후 font를 ubuntu mono로 설정해준다.
@@ -532,6 +532,22 @@ slack homepage에서 다운후 설치</br>
 ## GNOME
 - GNOME은 ubuntu의 UI를 설정해주는 프로그램이다.</br>
 보다 자신에게 편한 ubuntu의 UI사용이나 변경을 원한다면 이용하는 것이 좋다.</br>
+#### GNOME 
+```
+sudo add-apt-repository ppa:gnome3-team/gnome3-staging
+
+sudo add-apt-repository ppa:gnome3-team/gnome3
+```
+
+```
+sudo apt dist-upgrade
+```
+
+```
+sudo apt install gnome gnome-shell
+```
+
+
 #### GNOME Classic
 ```
 sudo apt-get install gnome-session-flashback
