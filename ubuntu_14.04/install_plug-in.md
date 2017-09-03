@@ -109,7 +109,7 @@ curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jel
 $ sudo apt-get update && sudo apt-get install zsh
 ```
 
-- ZSH 기본값 설정(zsh 위치 확인 후 그 확인된 root로 기본값 설정 및 확인):
+- ZSH 기본값 설정(zsh 위치 확인 후 그 확인된 root로 기본값 설정 및 확인): 이방법이 안된다면 https://aweekj.github.io/2017-02-20/zsh/ 참조
 ```
 chsh -s `which zsh`
 
@@ -234,7 +234,7 @@ https://humb1ec0ding.github.io/2013/11/26/2013-11-26-ubuntu-powerline-beautify-t
 user$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
 ```
 
-- Configure Plugins
+- Configure Plugins -> .vimrc 넣기
 ```
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
