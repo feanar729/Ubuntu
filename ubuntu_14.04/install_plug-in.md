@@ -235,7 +235,7 @@ https://humb1ec0ding.github.io/2013/11/26/2013-11-26-ubuntu-powerline-beautify-t
 user$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
 ```
 
-- Configure Plugins -> .vimrc 넣기
+- Configure Plugins -> .vimrc 넣기 -> vim 들어간 후 :PluginInstall 엔터
 ```
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
