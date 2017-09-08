@@ -3,11 +3,9 @@
 ------------------------------------------------------------------
 # ubuntu 14.04
 > Ubuntu Install 경험 기록
->>[Ubuntu install][install]
-[install]: https://github.com/feanar729/ubuntu/blob/master/ubuntu_14.04/install_14.04.md 
+>>[Ubuntu install]: (https://github.com/feanar729/ubuntu/blob/master/ubuntu_14.04/install_14.04.md) <br> 
 > 환경설정 구축 경험 기록
->>[Ubuntu tools & plug-in][tools & plug-in]
-[tools & plug-in]: https://github.com/feanar729/ubuntu/blob/master/ubuntu_14.04/install_plug-in.md 
+>>[Ubuntu tools & plug-in]: (https://github.com/feanar729/ubuntu/blob/master/ubuntu_14.04/install_plug-in.md) 
 
 
 # ubuntu 16.04
