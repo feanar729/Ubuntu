@@ -38,7 +38,7 @@ sudo apt-get install vim
 아래처럼 .vimrc 파일을 생성한후 다음과 같이 설정했다.
 ```
 vi ~/.vimrc
-```                                 
+```
 
 ```
 set cindent " C 프로그래밍용 자동 들여쓰기
@@ -74,8 +74,7 @@ set backspace=eol,start,indent " 줄의 끝, 시작, 들여쓰기에서 백스�
 set history=1000 " vi 편집기록 기억갯수 .viminfo에 기록
 filetype indent on " 파일 종류에 따른 구문강조
 
-"colorscheme default  "  vi 색상 테마 설정
-colorscheme jellybeans " vi 색상 테마
+colorscheme default  "  vi 색상 테마 설정
 "colorscheme blue "vi 색상 blue
 "colorscheme desert "vi 색상
 "colorscheme elflord "vi 색상
@@ -86,12 +85,13 @@ colorscheme jellybeans " vi 색상 테마
 "colorscheme slate "vi 색상
 "colorscheme torte "vi 색상
 
-set autoindent  " 자동 들여쓰기
-set number " 행번호 표시, set nu 도 가능
-set shiftwidth=4 " 자동 들여쓰기 4칸
-set tabstop=4 " 탭을 4칸으로
-
+"set rtp+=~/.vim/bundle/vim-colors-solarized
 syntax on   " 문법 하이라이트 킴"
+"set background=dark
+"colorscheme solarized
+
+"Bundle 'sonph/onehalf', {'rtp': 'vim/'}
+
 ```
 
 - vim 컬러 스키마(jellybeans) 설치:
