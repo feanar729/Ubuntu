@@ -6,4 +6,4 @@
 
 # ubuntu App
 - ubuntu에 설치된 app 및 환경설정 등을 정리 
-> [App]()
+> [App](https://github.com/feanar729/ubuntu/blob/master/Ubuntu_App/APP_Install.md)
