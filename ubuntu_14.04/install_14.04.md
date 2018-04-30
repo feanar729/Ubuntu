@@ -13,7 +13,9 @@ GRUB가 ubuntu 설치를 해도 나타나지 않는 경우가 있다. 그때 경
 ```` 
 sudo apt-get update
 ```
-=================================================================================================-
+
+--------------------------------------------------------------------------------------------------
+
 ### 부팅 중 부트로더가 나오지 않을때
 우선 부팅 후 ubuntu install 화면에서 *'Ubuntu without install'* 로 들어간다<br/>
 다음과 같은 명령어를 터미널 실행 후 'boot-repair'를 설치한다.<br/>
@@ -72,6 +74,7 @@ sudo apt-get install fglrx
 ```
 
 *이슈는 해결되지 않았다..*<br/>
+
 ------------------------------------------------------------------------
 
 그래서 다른 방법을 구글링으로 찾아보니 다음과 같은 해결 방책이 나왔다.
@@ -104,7 +107,7 @@ $ sudo reboot
 https://askubuntu.com/questions/141606/how-to-fix-the-system-is-running-in-low-graphics-mode-error</br>
 http://simpledeveloper.com/system-running-in-low-graphics-mode/</br>
 
-====================================================================================================
+-------------------------------------------------------------------------------------------------
 
 ### fctix 한영키 적용(16.04)
 [fctix][hangul]
@@ -113,3 +116,4 @@ http://simpledeveloper.com/system-running-in-low-graphics-mode/</br>
 ### install plug-in 기록
 [install_plug-in][plugin]
 [plugin]: https://github.com/feanar729/ubuntu/blob/master/ubuntu_14.04/install_plug-in.md
+
